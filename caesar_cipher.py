@@ -1,5 +1,8 @@
-#take input message and shift key from user and store it
+#to clear console and make it look good
+import os
+clear = lambda: os.system('clear') #on Linux System
 
+#take input message and shift key from user and store it
 #take input message and shift key from user and store it
 
 print('What do you want to encrypt?')
@@ -18,7 +21,7 @@ encrypt = []
 #if the characters are a-z then shift them based on the key provided, the bounds below are a-z in upper and lower case. The second
 for letter in unicode_list:
   shifted = letter + shiftkey
-  if (letter >=97) & (letter <=122) or (letter >=65) & (letter <= 90):
+  if ((letter >=97) & (letter <=122)) or ((letter >=65) & (letter <= 90)):
     #second if cycles value back to a if the shift pushes past z. 
     if shifted > 122:
       letter = 96 + (shifted - 122)
@@ -32,4 +35,5 @@ for letter in unicode_list:
   else:
     encrypt.append(chr(letter))
 #convert encrypted list to string
+clear()
 print ("".join(encrypt))
